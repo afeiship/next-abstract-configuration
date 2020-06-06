@@ -8,7 +8,7 @@
   var NxAbstractConfiguration = nx.declare('nx.AbstractConfiguration', {
     methods: {
       init: function (inOptions) {
-        this.initOptions(inOptions);
+        this.options = nx.mix(null, this.defaults(), inOptions);
         this.data = this.load();
         this.operator = new NxDataOperator(this.data);
       },
@@ -26,9 +26,9 @@
         var str = this.dump();
         fs.writeFileSync(this.options.path, str);
       },
-      initOptions: function (inOptions) {
+      defaults: function () {
         // @ template method
-        this.options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
+        return DEFAULT_OPTIONS;
       },
       load: function () {
         // @ template method
