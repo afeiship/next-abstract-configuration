@@ -2,8 +2,8 @@
  * name: @feizheng/next-abstract-configuration
  * description: Abstract configuration.
  * homepage: https://github.com/afeiship/next-abstract-configuration
- * version: 1.0.4
- * date: 2020-06-06T03:51:05.488Z
+ * version: 1.0.5
+ * date: 2020-06-06T04:04:29.026Z
  * license: MIT
  */
 

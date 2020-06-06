@@ -28,3 +28,7 @@ conf.get('scirpts.build','gulp');
 conf.sets({ name: 'fei', age: 100});
 conf.gets();
 ```
+
+## implements
+- https://github.com/afeiship/next-json-configuration
+- https://github.com/afeiship/next-yaml-configuration
