@@ -12,9 +12,9 @@
         this.operator = new NxDataOperator(this.data);
       },
       'set,sets,get,gets': function (name) {
-        var self = this;
         return function () {
-          self.operator[name].apply(arguments);
+          var ctx = this.operator;
+          return ctx[name].apply(ctx, arguments);
         }
       },
       update: function (inObject) {
