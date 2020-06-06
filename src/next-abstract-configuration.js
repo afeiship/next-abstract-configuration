@@ -8,7 +8,7 @@
     methods: {
       init: function (inOptions) {
         this.initOptions(inOptions);
-        this.data = this.__load__();
+        this.data = this.load();
         this.operator = new NxDataOperator(this.data);
       },
       'set,sets,get,gets': function (name) {
@@ -22,18 +22,18 @@
         this.save();
       },
       save: function () {
-        var str = this.__dump__();
+        var str = this.dump();
         fs.writeFileSync(this.options.path, str);
       },
       initOptions: function (inOptions) {
         // @ template method
         this.options = inOptions;
       },
-      __load__: function () {
+      load: function () {
         // @ template method
         return null;
       },
-      __dump__: function () {
+      dump: function () {
         // @ template method
         return '';
       }
