@@ -2,7 +2,8 @@
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@feizheng/next-js-core2');
   var NxDataOperator = nx.DataOperator || require('@feizheng/next-object-operator');
-
+  var fs = require('fs');
+  var DEFAULT_OPTIONS = { path: '' };
 
   var NxAbstractConfiguration = nx.declare('nx.AbstractConfiguration', {
     methods: {
@@ -27,7 +28,7 @@
       },
       initOptions: function (inOptions) {
         // @ template method
-        this.options = inOptions;
+        this.options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
       },
       load: function () {
         // @ template method
