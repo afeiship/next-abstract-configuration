@@ -9,8 +9,7 @@
     methods: {
       init: function (inOptions) {
         this.options = nx.mix(null, this.defaults(), inOptions);
-        this.data = this.load();
-        this.operator = new NxDataOperator(this.data);
+        this.reload();
       },
       'set,sets,get,gets': function (name) {
         return function () {
@@ -20,6 +19,7 @@
       },
       reload: function () {
         this.data = this.load();
+        this.operator = new NxDataOperator(this.data);
       },
       update: function (inObject) {
         this.sets(inObject);
