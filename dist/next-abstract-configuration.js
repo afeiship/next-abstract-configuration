@@ -2,8 +2,8 @@
  * name: @feizheng/next-abstract-configuration
  * description: Abstract configuration.
  * homepage: https://github.com/afeiship/next-abstract-configuration
- * version: 1.1.0
- * date: 2020-06-06T04:07:59.810Z
+ * version: 1.1.1
+ * date: 2020-06-27T06:25:22.854Z
  * license: MIT
  */
 
@@ -26,6 +26,9 @@
           var ctx = this.operator;
           return ctx[name].apply(ctx, arguments);
         }
+      },
+      reload: function () {
+        this.data = this.load();
       },
       update: function (inObject) {
         this.sets(inObject);

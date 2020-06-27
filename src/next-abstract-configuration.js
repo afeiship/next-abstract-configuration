@@ -18,6 +18,9 @@
           return ctx[name].apply(ctx, arguments);
         }
       },
+      reload: function () {
+        this.data = this.load();
+      },
       update: function (inObject) {
         this.sets(inObject);
         this.save();
