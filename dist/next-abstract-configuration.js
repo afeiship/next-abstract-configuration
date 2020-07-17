@@ -2,8 +2,8 @@
  * name: @feizheng/next-abstract-configuration
  * description: Abstract configuration.
  * homepage: https://github.com/afeiship/next-abstract-configuration
- * version: 1.2.0
- * date: 2020-07-17T03:34:16.362Z
+ * version: 1.2.1
+ * date: 2020-07-17T03:36:35.523Z
  * license: MIT
  */
 
@@ -31,6 +31,7 @@
       },
       reload: function () {
         this.data = this.load();
+        this.transform();
         this.operator = new NxDataOperator(this.data);
       },
       update: function (inObject) {

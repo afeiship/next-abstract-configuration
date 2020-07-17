@@ -22,6 +22,7 @@
       },
       reload: function () {
         this.data = this.load();
+        this.transform();
         this.operator = new NxDataOperator(this.data);
       },
       update: function (inObject) {
