@@ -2,8 +2,8 @@
  * name: @feizheng/next-abstract-configuration
  * description: Abstract configuration.
  * homepage: https://github.com/afeiship/next-abstract-configuration
- * version: 1.1.2
- * date: 2020-06-27T07:36:00.406Z
+ * version: 1.2.0
+ * date: 2020-07-17T03:33:38.083Z
  * license: MIT
  */
 
@@ -11,8 +11,11 @@
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@feizheng/next-js-core2');
   var NxDataOperator = nx.DataOperator || require('@feizheng/next-object-operator');
+  var nxDeepEach = nx.deepEach || require('@feizheng/next-deep-each');
+  var nxSecretTmpl = nx.secretTmpl || require('@feizheng/next-secret-tmpl');
   var fs = require('fs');
   var DEFAULT_OPTIONS = { path: '' };
+  var VAR_RE = /\${{(.*?)}}/;
 
   var NxAbstractConfiguration = nx.declare('nx.AbstractConfiguration', {
     methods: {
@@ -49,6 +52,20 @@
       dump: function () {
         // @ template method
         return '';
+      },
+      transform: function () {
+        var ctx = this.context();
+        var data = this.data;
+        nxDeepEach(data, function (key, value, parent) {
+          if (typeof value === 'string' && VAR_RE.test(value)) {
+            parent[key] = nxSecretTmpl(value, ctx)
+          }
+        });
+      },
+      context: function () {
+        return {
+          env: process.env
+        };
       }
     }
   });
