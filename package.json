@@ -34,7 +34,6 @@
   "dependencies": {
     "@feizheng/next-deep-each": "^1.0.3",
     "@feizheng/next-js-core2": "^2.5.0",
-    "@feizheng/next-multiple-exec": "^1.0.0",
     "@feizheng/next-object-operator": "^1.0.0",
     "@feizheng/next-secret-tmpl": "^1.0.1"
   },
