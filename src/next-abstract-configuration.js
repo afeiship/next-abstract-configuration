@@ -50,7 +50,7 @@
         var data = this.data;
         nxDeepEach(data, function (key, value, parent) {
           if (typeof value === 'string' && VAR_RE.test(value)) {
-            parent[key] = nxSecretTmpl(value, ctx)
+            parent[key] = nxSecretTmpl(value, ctx) || value
           }
         });
       },

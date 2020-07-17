@@ -2,8 +2,8 @@
  * name: @feizheng/next-abstract-configuration
  * description: Abstract configuration.
  * homepage: https://github.com/afeiship/next-abstract-configuration
- * version: 1.2.1
- * date: 2020-07-17T03:36:35.523Z
+ * version: 1.2.2
+ * date: 2020-07-17T03:37:25.005Z
  * license: MIT
  */
 
@@ -59,7 +59,7 @@
         var data = this.data;
         nxDeepEach(data, function (key, value, parent) {
           if (typeof value === 'string' && VAR_RE.test(value)) {
-            parent[key] = nxSecretTmpl(value, ctx)
+            parent[key] = nxSecretTmpl(value, ctx) || value
           }
         });
       },
