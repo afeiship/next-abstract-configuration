@@ -11,7 +11,7 @@
   var NxAbstractConfiguration = nx.declare('nx.AbstractConfiguration', {
     methods: {
       init: function (inOptions) {
-        this.options = nx.mix(null, this.defaults(), inOptions);
+        this.options = nx.mix(null, DEFAULT_OPTIONS, this.defaults(), inOptions);
         this.reload();
       },
       'set,sets,get,gets': function (name) {
@@ -35,7 +35,7 @@
       },
       defaults: function () {
         // @ template method
-        return DEFAULT_OPTIONS;
+        return null;
       },
       load: function () {
         // @ template method

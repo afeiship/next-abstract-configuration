@@ -2,8 +2,8 @@
  * name: @feizheng/next-abstract-configuration
  * description: Abstract configuration.
  * homepage: https://github.com/afeiship/next-abstract-configuration
- * version: 1.2.3
- * date: 2020-07-18T05:03:09.167Z
+ * version: 1.2.4
+ * date: 2020-07-18T05:10:07.231Z
  * license: MIT
  */
 
@@ -20,7 +20,7 @@
   var NxAbstractConfiguration = nx.declare('nx.AbstractConfiguration', {
     methods: {
       init: function (inOptions) {
-        this.options = nx.mix(null, this.defaults(), inOptions);
+        this.options = nx.mix(null, DEFAULT_OPTIONS, this.defaults(), inOptions);
         this.reload();
       },
       'set,sets,get,gets': function (name) {
@@ -44,7 +44,7 @@
       },
       defaults: function () {
         // @ template method
-        return DEFAULT_OPTIONS;
+        return null;
       },
       load: function () {
         // @ template method
