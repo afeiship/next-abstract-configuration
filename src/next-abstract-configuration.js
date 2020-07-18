@@ -5,7 +5,7 @@
   var nxDeepEach = nx.deepEach || require('@feizheng/next-deep-each');
   var nxSecretTmpl = nx.secretTmpl || require('@feizheng/next-secret-tmpl');
   var fs = require('fs');
-  var DEFAULT_OPTIONS = { path: '' };
+  var DEFAULT_OPTIONS = { path: '', context: nx.noop };
   var VAR_RE = /\${{(.*?)}}/;
 
   var NxAbstractConfiguration = nx.declare('nx.AbstractConfiguration', {
@@ -55,9 +55,12 @@
         });
       },
       context: function () {
-        return {
-          env: process.env
-        };
+        return nx.mix(
+          {
+            env: process.env
+          },
+          this.options.context()
+        );
       }
     }
   });
