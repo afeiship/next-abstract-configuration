@@ -3,7 +3,7 @@
  * description: Abstract configuration.
  * homepage: https://github.com/afeiship/next-abstract-configuration
  * version: 1.0.0
- * date: 2020-11-20 17:56:33
+ * date: 2020-11-20 17:57:44
  * license: MIT
  */
 

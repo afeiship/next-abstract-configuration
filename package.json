@@ -34,5 +34,10 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@jswork/next-deep-each": "^1.0.0",
+    "@jswork/next-object-operator": "^1.0.0",
+    "@jswork/next-secret-tmpl": "^1.0.0"
   }
 }
