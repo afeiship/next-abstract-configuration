@@ -1,18 +1,9 @@
-/*!
- * name: @feizheng/next-abstract-configuration
- * description: Abstract configuration.
- * homepage: https://github.com/afeiship/next-abstract-configuration
- * version: 1.2.4
- * date: 2020-07-18T05:10:07.231Z
- * license: MIT
- */
-
-(function () {
+(function() {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('@feizheng/next-js-core2');
-  var NxDataOperator = nx.DataOperator || require('@feizheng/next-object-operator');
-  var nxDeepEach = nx.deepEach || require('@feizheng/next-deep-each');
-  var nxSecretTmpl = nx.secretTmpl || require('@feizheng/next-secret-tmpl');
+  var nx = global.nx || require('@jswork/next');
+  var NxDataOperator = nx.DataOperator || require('@jswork/next-object-operator');
+  var nxDeepEach = nx.deepEach || require('@jswork/next-deep-each');
+  var nxSecretTmpl = nx.secretTmpl || require('@jswork/next-secret-tmpl');
   var fs = require('fs');
   var DEFAULT_OPTIONS = { path: '', context: nx.noop };
   var VAR_RE = /\${{(.*?)}}/;
@@ -27,7 +18,7 @@
         return function () {
           var ctx = this.operator;
           return ctx[name].apply(ctx, arguments);
-        }
+        };
       },
       reload: function () {
         this.data = this.load();
@@ -59,7 +50,7 @@
         var data = this.data;
         nxDeepEach(data, function (key, value, parent) {
           if (typeof value === 'string' && VAR_RE.test(value)) {
-            parent[key] = nxSecretTmpl(value, ctx) || value
+            parent[key] = nxSecretTmpl(value, ctx) || value;
           }
         });
       },
@@ -78,5 +69,3 @@
     module.exports = NxAbstractConfiguration;
   }
 })();
-
-//# sourceMappingURL=next-abstract-configuration.js.map
