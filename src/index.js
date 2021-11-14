@@ -3,7 +3,7 @@
   var nx = global.nx || require('@jswork/next');
   var NxDataOperator = nx.DataOperator || require('@jswork/next-object-operator');
   var nxDeepEach = nx.deepEach || require('@jswork/next-deep-each');
-  var nxDeepAssign = nx.deepEach || require('@jswork/next-deep-assign');
+  var nxDeepAssign = nx.deepAssgin || require('@jswork/next-deep-assign');
   var nxSecretTmpl = nx.secretTmpl || require('@jswork/next-secret-tmpl');
   var fs = require('fs');
   var DEFAULT_OPTIONS = { path: '', context: nx.noop };
