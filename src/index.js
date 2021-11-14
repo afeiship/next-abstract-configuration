@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@jswork/next');
   var NxDataOperator = nx.DataOperator || require('@jswork/next-object-operator');
@@ -59,6 +59,7 @@
           {
             env: process.env
           },
+          this.data,
           this.options.context()
         );
       }
