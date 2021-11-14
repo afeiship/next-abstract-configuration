@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-abstract-configuration",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Abstract configuration.",
   "homepage": "https://github.com/afeiship/next-abstract-configuration",
   "author": {
@@ -36,6 +36,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
+    "@jswork/next-deep-assign": "^1.0.2",
     "@jswork/next-deep-each": "^1.0.0",
     "@jswork/next-object-operator": "^1.0.0",
     "@jswork/next-secret-tmpl": "^1.0.0"
