@@ -55,7 +55,7 @@
         });
       },
       context: function () {
-        return nx.mix(
+        return nxDeepEach(
           {
             env: process.env
           },
