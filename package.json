@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-abstract-configuration",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Abstract configuration.",
   "homepage": "https://github.com/afeiship/next-abstract-configuration",
   "author": {
@@ -27,7 +27,7 @@
     "gulp-size": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "jest": "^26.6.3",
-    "release-it": "^14.2.1",
+    "release-it": "^14.14.3",
     "uglify-js": "3.11.6",
     "uglify-save-license": "^0.4.1"
   },
